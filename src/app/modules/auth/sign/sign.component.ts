@@ -73,8 +73,4 @@ export class SignComponent implements OnInit {
       }
     }
   }
-
-  @Input() error: string | null | undefined;
-
-  @Output() submitEM = new EventEmitter();
 }

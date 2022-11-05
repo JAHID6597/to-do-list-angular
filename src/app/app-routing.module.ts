@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ItemLayoutComponent } from './modules/items/item-layout/item-layout.component';
 import { AuthGuard } from './auth-guard/auth-guard';
 import { UserLayoutComponent } from './modules/user/user-layout/user-layout.component';
+import { NotFoundComponent } from './shared/component/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'auth', pathMatch: 'full' },
@@ -25,10 +26,9 @@ const routes: Routes = [
     component: UserLayoutComponent,
     canActivate: [AuthGuard],
     loadChildren: () =>
-      import('./modules/user/user.module').then(
-        (module) => module.UserModule
-      ),
+      import('./modules/user/user.module').then((module) => module.UserModule),
   },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({

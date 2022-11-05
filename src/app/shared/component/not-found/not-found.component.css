@@ -1,0 +1,52 @@
+#wrapper{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+}
+
+p {
+  max-width: 25rem;
+}
+
+#container {
+  border: none;
+  padding: 0.4rem;
+  border-radius: 0;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  min-width: 250px;
+}
+
+hr {
+  width: 80%;
+}
+
+button {
+  color: white;
+  background-color: black;
+  font-size: large;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 480px) {
+  #container {
+    border: 0.1rem solid lightgray;
+    padding: 2rem;
+    border-radius: 0.5rem;
+  }
+}
+
+p {
+  text-align: center;
+}

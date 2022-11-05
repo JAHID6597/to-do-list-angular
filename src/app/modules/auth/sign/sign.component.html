@@ -5,18 +5,26 @@
       <form [formGroup]="form" (ngSubmit)="submit()">
         <p>
           <mat-form-field>
-            <input type="text" matInput placeholder="username" formControlName="username" required />
+            <input
+              type="text"
+              matInput
+              placeholder="username"
+              formControlName="username"
+              required
+            />
           </mat-form-field>
         </p>
 
         <p>
           <mat-form-field>
-            <input type="password" matInput placeholder="password" formControlName="password" required />
+            <input
+              type="password"
+              matInput
+              placeholder="password"
+              formControlName="password"
+              required
+            />
           </mat-form-field>
-        </p>
-
-        <p *ngIf="error" class="error">
-          {{ error }}
         </p>
 
         <div class="button">
@@ -26,10 +34,18 @@
         </div>
 
         <div class="suggestion">
-          <span *ngIf="signType === 'signin'">Not a member?
-            <span [routerLink]="['../signup']" class="route-link">signup now</span></span>
-          <span *ngIf="signType === 'signup'">Already have an account?
-            <span [routerLink]="['../signin']" class="route-link">signin now</span></span>
+          <span *ngIf="signType === 'signin'"
+            >Not a member?
+            <span [routerLink]="['../signup']" class="route-link"
+              >signup now</span
+            ></span
+          >
+          <span *ngIf="signType === 'signup'"
+            >Already have an account?
+            <span [routerLink]="['../signin']" class="route-link"
+              >signin now</span
+            ></span
+          >
         </div>
       </form>
     </mat-card-content>

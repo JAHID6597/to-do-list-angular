@@ -4,7 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class GlobalService {
-  public API_BASE_URL = 'http://localhost:3000';
+  // public API_LOCAL_BASE_URL = 'http://localhost:3000';
+  public API_BASE_URL = 'https://nestjs-to-do-list-server.herokuapp.com';
 
   constructor() {}
 }

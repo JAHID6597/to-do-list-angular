@@ -1,0 +1,26 @@
+.toolbar-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px;
+  height: 50px;
+  background: #ffffff;
+}
+
+.toolbar-brand {
+  font-size: 20px;
+}
+
+.route-link {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .toolbar-layout {
+    height: 80px;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

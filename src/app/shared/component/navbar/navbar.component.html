@@ -1,0 +1,16 @@
+<div class="toolbar-layout">
+    <div class="route-link toolbar-brand" routerLink="/item">Simple To Do List</div>
+
+    <div>
+      <span *ngIf="!isAuthenticated">
+        <a mat-button routerLink="/auth/sign">Signin</a>
+        <a mat-button routerLink="/auth/signup">Signup</a>
+      </span>
+
+      <span *ngIf="isAuthenticated">
+        <a mat-button routerLink="/item">Items</a>
+        <a mat-button routerLink="/user/profile">Profile</a>
+        <a mat-button (click)="handleLogout()">Logout</a>
+      </span>
+    </div>
+</div>

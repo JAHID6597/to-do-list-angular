@@ -1,0 +1,57 @@
+.center-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.mat-form-field {
+  width: 100%;
+  min-width: 300px;
+}
+
+.mat-card-title,
+.mat-card-content {
+  display: flex;
+  justify-content: center;
+}
+
+.mat-card-title {
+  text-transform: uppercase;
+  padding: 10px 0;
+}
+
+.error {
+  margin: 5px 0;
+  padding: 10px;
+
+  color: white;
+  background-color: red;
+}
+
+.update-btn {
+  background: #330033;
+  color: #ffffff;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+.route-link {
+  color: #330033;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.input-layout {
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .input-layout {
+    flex-wrap: wrap;
+  }
+}

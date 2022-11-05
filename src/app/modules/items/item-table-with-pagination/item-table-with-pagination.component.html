@@ -1,0 +1,59 @@
+<div style="padding: 10px">
+  <mat-form-field style="width: 100%">
+    <input
+      matInput
+      (keyup)="onSearchInput($event)"
+      placeholder="Search from here..."
+    />
+  </mat-form-field>
+
+  <table
+    mat-table
+    [dataSource]="tableDataSrc"
+    class="mat-elevation-z8"
+    *ngIf="tableData.length"
+  >
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>Title</th>
+      <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="isActive">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let element">
+        <mat-slide-toggle
+          color="primary"
+           (change)="updateActiveStatus(element)"
+          [checked]="element.isActive"
+        ></mat-slide-toggle>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button>
+          <mat-icon color="primary" (click)="navigateToItemUpdate(element)"
+            >edit</mat-icon
+          >
+        </button>
+        <button mat-icon-button>
+          <mat-icon color="warn" (click)="deleteItem(element)">delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: tableColumns"></tr>
+  </table>
+
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+  ></mat-paginator>
+</div>

@@ -1,0 +1,37 @@
+<div class="center-layout">
+  <mat-card>
+    <mat-card-title>{{ signType }}</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <p>
+          <mat-form-field>
+            <input type="text" matInput placeholder="username" formControlName="username" required />
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field>
+            <input type="password" matInput placeholder="password" formControlName="password" required />
+          </mat-form-field>
+        </p>
+
+        <p *ngIf="error" class="error">
+          {{ error }}
+        </p>
+
+        <div class="button">
+          <button type="submit" mat-raised-button class="sign-btn">
+            {{ signType }}
+          </button>
+        </div>
+
+        <div class="suggestion">
+          <span *ngIf="signType === 'signin'">Not a member?
+            <span [routerLink]="['../signup']" class="route-link">signup now</span></span>
+          <span *ngIf="signType === 'signup'">Already have an account?
+            <span [routerLink]="['../signin']" class="route-link">signin now</span></span>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

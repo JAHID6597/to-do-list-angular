@@ -52,8 +52,8 @@ export class SignComponent implements OnInit {
   public signup() {
     this.authenticationService.signUp(this.form.value).subscribe({
       next: (result) => {
-        if (result.access_token) {
-          this.router.navigateByUrl('/item');
+        if (result) {
+          this.router.navigateByUrl('/auth/signin');
         }
       },
       error: (error) => {

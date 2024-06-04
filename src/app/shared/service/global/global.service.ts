@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class GlobalService {
   // public API_LOCAL_BASE_URL = 'http://localhost:3000';
-  public API_BASE_URL = 'https://nestjs-to-do-list-server.herokuapp.com';
+  public API_BASE_URL = 'https://nestjs-to-do-list-server.onrender.com';
 
   constructor() {}
 }
